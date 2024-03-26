@@ -1,0 +1,90 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import imgAPI from '../images/img-API.jpeg'
+import imgEcommerce from '../images/img-ecommerce.jpeg'
+import imgEncriptador from '../images/AluraChallenge.jpeg'
+import imgCalculadora from '../images/CalculadoraOhm.jpeg'
+import '@fontsource-variable/roboto-condensed';
+
+let tagsBackend = [
+    {
+        title:'Spring Boot',
+        img:'https://img.icons8.com/color/48/spring-logo.png',
+        alt:'spring-boot icon',
+        color:'bg-[#D9EDBF]'
+    },
+    {
+        title:'MongoDB',
+        img:'https://img.icons8.com/color/48/mongodb.png',
+        alt:'mongoDB Icon',
+        color:'bg-[#CFE5B3]'
+    }
+]
+
+let tagsFrontend =[
+    {
+        title:'HTML',
+        img:'https://img.icons8.com/color/48/html-5--v1.png',
+        alt:'Html Icon',
+        color:'bg-[#E8985E]'
+    },
+    {
+        title:'CSS',
+        img:'https://img.icons8.com/color/48/css3.png',
+        alt:'CSS Icon',
+        color:'bg-[#C5D5FB]'
+    },
+    {
+        title:'JavaScript',
+        img:'https://img.icons8.com/color/48/javascript--v1.png',
+        alt:'JS Icon',
+        color:'bg-[#FDEF72]'
+    }
+]
+---
+
+<section class="pb-2">
+    <h2 class="text-center font-roboto text-2xl text-[#fff] font-semibold">Proyectos</h2>
+    <ProjectCard tagsArray={tagsBackend} href="https://github.com/JuztADev/CRUD_CookWare">
+        <p slot="title" class="font-robo-con text-[#FFB3E4] text-xl my-2 md:col-start-1 md:col-end-5 md:row-start-1 md:self-center md:justify-self-center">API REST</p>
+        <p slot="description" class="font-robo-con text-periwinkle text-base md:col-start-1 md:col-end-3 md:row-start-2 md:self-center md:justify-self-center md:p-2">API REST para una tienda de utensilios de cocina. Esta API proporciona un conjunto completo de operaciones CRUD (Crear, Leer, Actualizar y Eliminar) para gestionar eficientemente los productos disponibles en la tienda, además de un CRUD para la gestión de usuarios y asignación de cargos.</p>
+        <div slot="img" class="flex justify-center items-center max-w-80 h-auto md:col-start-3 md:col-end-4 md:row-start-2 lg:max-w-[28rem] lg:p-2">
+            
+            <img  src={imgAPI.src} alt="Backend Code API Spring Boot" class="img-hov mb-3  aspect-video w-full object-cover object-left-top">
+        </div>
+    </ProjectCard>
+    <ProjectCard tagsArray={tagsFrontend} href="https://github.com/JuztADev/Ecommerce">
+        <p slot="title" class="font-robo-con text-[#FFB3E4] text-xl my-2 md:col-start-1 md:col-end-5 md:row-start-1 md:self-center md:justify-self-center">Desarrollo Frontend para un Ecommerce</p>
+        <p slot="description" class="font-robo-con text-periwinkle text-base md:col-start-1 md:col-end-3 md:row-start-2 md:self-center md:justify-self-center md:p-2">Frontend completo para un sitio de ecommerce, proporcionando una experiencia de usuario intuitiva y atractiva para los clientes. Enfocado en el manejo de eventos y la manipulación del DOM con JavaScript.</p>
+        <div slot="img" class="max-w-xs max-h-50 md:col-start-3 md:col-end-4 md:row-start-2 lg:max-w-[28rem] lg:p-2">
+            
+            <img src={imgEcommerce.src} alt="Ecommerce Landing Page" class="img-hov mb-3  aspect-video w-full object-cover object-left-top">
+        </div>
+    </ProjectCard>
+    <ProjectCard tagsArray={tagsFrontend} href="https://github.com/JuztADev/Alura_Challenge_text">
+        <p slot="title" class="font-robo-con text-[#FFB3E4] text-xl my-2 md:col-start-1 md:col-end-5 md:row-start-1 md:self-center md:justify-self-center">Encriptador de Texto</p>
+        <p slot="description" class="font-robo-con text-periwinkle text-base md:col-start-1 md:col-end-3 md:row-start-2 md:self-center md:justify-self-center md:p-2">Encriptador de texto basado en el desafío propuesto por Alura Latam, ofreciendo una solución creativa y funcional para la encriptación de mensajes. Diseño intuitivo y facil de usar para encriptar y desencriptar mensajes de manera sencilla.</p>
+        <div slot="img" class="max-w-xs max-h-50 md:col-start-3 md:col-end-4 md:row-start-2 lg:max-w-[28rem] lg:p-2">
+            <img src={imgEncriptador.src} alt="Encriptador de texto landing page" class="img-hov mb-3  w-full aspect-vide object-cover object-left-top">
+        </div>
+    </ProjectCard>
+    <ProjectCard tagsArray={tagsFrontend} href="https://github.com/JuztADev/Ohms_law">
+        <p slot="title" class="font-robo-con text-[#FFB3E4] text-xl my-2 md:col-start-1 md:col-end-5 md:row-start-1 md:self-center md:justify-self-center">Calculadora de Ohm</p>
+        <p slot="description" class="font-robo-con text-periwinkle text-base md:col-start-1 md:col-end-3 md:row-start-2 md:self-center md:justify-self-center md:p-2">Calculadora basada en la Ley de Ohm, proporcionando una herramienta práctica y funcional para calcular rápidamente los valores de resistencia, voltaje y corriente en un circuito eléctrico. Este proyecto se enfoca en la utilidad y precisión de los cálculos, siguiendo los principios fundamentales de la teoría eléctrica, además de contener gráficos explicativos que sirvan de ayuda para comprender mejor el cálculo de estos valores.</p>
+        <div slot="img" class="max-w-xs max-h-50 md:col-start-3 md:col-end-4 md:row-start-2 lg:max-w-[28rem] lg:p-2">
+            <img   src={imgCalculadora.src} alt="Calculadora de ohm landing page" class="img-hov mb-3 aspect-video w-full object-cover object-left-top">
+
+        </div>
+    </ProjectCard>
+</section>
+
+
+<style>
+    .img-hov{
+        transition: all 0.2s ease-in 0s;
+        
+    }
+    .img-hov:hover{
+        transform: scale(1.05,1.05);
+    }
+</style>

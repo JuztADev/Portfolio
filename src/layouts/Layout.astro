@@ -1,0 +1,33 @@
+---
+import '@fontsource-variable/roboto-mono'
+import '@fontsource-variable/rubik';
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body class="min-h-dvh min-w-dvw">
+			<header class="fixed py-5 w-full bg-[#011638] top-0">
+				<nav class="flex flex-row justify-center items-center mx-1 h-10">
+					 <a href="#description" class="font-rubik text-[#D1D2F9] font-bold text-2xl hover:text-[#A3BCF9] active:text-[#A3BCF9]">JuztADev</a>
+				</nav>
+			</header>
+			<main class="pt-20 bg-[#042862]">
+				<slot />
+			</main >
+
+		
+	</body>
+</html>
+

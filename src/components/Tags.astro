@@ -1,0 +1,15 @@
+---
+import '@fontsource-variable/rubik';
+interface Props {
+    color?:string
+}
+
+const { color="bg-[#F58F29]" } = Astro.props;
+
+---
+
+
+<p  class=`${color} flex gap-px p-1 px-2 text-sm text-[#000] my-2 font-rubik rounded-md border-black border-1 shadow-sm shadow-black flex justify-center items-center` >
+    <slot name="before"/>
+    <slot />
+</p>

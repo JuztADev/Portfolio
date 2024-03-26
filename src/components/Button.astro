@@ -1,0 +1,54 @@
+---
+import '@fontsource-variable/roboto-mono';
+interface Props {
+    link?:string,
+    click:boolean
+    color?:string
+    hcolor?:string
+}
+
+const { click,link='#',color='bg-[#7436AB]',hcolor='hover:bg-[#5F2C8C]' } = Astro.props;
+---
+
+<button-click data-message={click.toString()}>
+    <a href={link} class=`but-hov ${color} flex gap-2 p-1 text-l text-[#FFF] my-2 font-roboto rounded-md border-black border-2 shadow-md shadow-black ${hcolor} justify-center max-w-40` >
+        <slot name="before"/>
+        <slot />
+    </a>
+    
+</button-click>
+
+<script>
+    class ButtonClick extends HTMLElement {
+        constructor() {
+            super();
+
+            // Read the message from the data attribute.
+            const click = this.dataset.message
+            const clickbool = (click === 'true')
+            const a = this.querySelector('a');
+            if(clickbool){
+                a!.addEventListener('click', (event) => {
+                    event!.preventDefault();
+                    navigator.clipboard.writeText('juztadev@gmail.com')
+                    let text = document.querySelector(".text-copy")
+                    text!.classList.add("active");
+                    setTimeout(()=>{
+                        text!.classList.remove("active");
+                    },2000)
+                });  
+            }
+        }
+    }
+    customElements.define('button-click', ButtonClick)    
+</script>
+
+<style>
+    .but-hov{
+        transition: all 0.2s ease-in 0s;
+        
+    }
+    .but-hov:hover{
+        transform: scale(1.1,1.1);
+    }
+</style>
